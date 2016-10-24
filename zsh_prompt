@@ -1,0 +1,48 @@
+# Zsh ¥×¥í¥ó¥×¥ÈÄêµÁ
+
+case `hostname -s` in
+    srapc2284)
+	color=31
+	;;
+    srapc2938)
+	color=33
+	;;
+    *)
+	color=34
+	;;
+esac
+
+# Command Prompt
+case ${UID} in
+    # root ÍÑ
+	0)
+		PS1="%B%{[31m%}%/#%{[m%}%b "
+		PS2="%B%{[31m%}%_#%{[m%}%b "
+		SPROMPT="%B%{[31m%}%r is correct? [n,y,a,e]:%{[m%}%b "
+		[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+			PROMPT="%{[34m%}${HOST%%.*} ${PROMPT}"
+		;;
+
+	# ¤½¤ì°Ê³°ÍÑ
+	*)
+	    und="%{[4m%}"
+		[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && PSHOST="%{[1;${color}m%}${HOST%%.*} %b"
+		PS1="${und}${PSHOST}${und}%(5~,%-1~/.../%3~,%~)%%%b "
+		PS2="%_%% "
+		SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
+esac
+
+# ±¦Ã¼¤ËÆü»þ¤ò½Ð¤¹
+RPS1="[%D %*]"
+
+case "${TERM}" in
+kterm*|xterm*)
+	precmd() {
+        # ¤Û¤È¤ó¤É¤Î¾ì¹ç Windows ¤Î PuTTY ¤Ç¼Â¹Ô¤¹¤ë¤Î¤Ç¡¢
+        # ¥¦¥£¥ó¥É¥¦¥¿¥¤¥È¥ëÍÑ¤Ë Shift_JIS ¤ËÊÑ´¹¤¹¤ë
+		prm_pwd=`print -P %~ | nkf -s`
+		echo -ne "\033]0;${HOST%%.*}:$prm_pwd\007"
+	}
+	#PROMPT=$(print "%{\e]2;%m:%~\7%}$PROMPT")
+	;;
+esac
