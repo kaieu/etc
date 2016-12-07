@@ -1,10 +1,11 @@
 [core]
 	editor = vim
+	quotepath = false
 [push]
 	default = simple
 [user]
 	email = t-nakagw@sra.co.jp
 	name = Tomohiro Nakagawa
 [alias]
-	log2 = log --graph --name-status --format='%h %Cgreen%ar %Cblue%an%Creset %s %Cred%d' --all
+	log2 = log --graph --name-status --format='%h %Cgreen%ad %Cblue%an%Creset %s %Cred%d'
 	st = status
