@@ -2,7 +2,7 @@
 
 umask 002
 
-# ¥³¥Ş¥ó¥ÉÍúÎò¤ÎÀßÄê
+# ã‚³ãƒãƒ³ãƒ‰å±¥æ­´ã®è¨­å®š
 HISTFILE=~/etc/zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -28,13 +28,13 @@ setopt list_packed
 # Environmental variables
 [ -f ~/etc/env.sh ] && . ~/etc/env.sh
 
-# Ctrl-R ¤Ç¤ÎÍúÎò¤Î¥¤¥ó¥¯¥ê¥á¥ó¥¿¥ë¥µ¡¼¥Á
+# Ctrl-R ã§ã®å±¥æ­´ã®ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ã‚¿ãƒ«ã‚µãƒ¼ãƒ
 bindkey '^R' history-incremental-search-backward
 #bindkey -e
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# Ctrl-P/N ¤Ç¤ÎÍúÎò¤Î¥µ¡¼¥Á
+# Ctrl-P/N ã§ã®å±¥æ­´ã®ã‚µãƒ¼ãƒ
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
