@@ -7,5 +7,5 @@
 	email = t-nakagw@sra.co.jp
 	name = Tomohiro Nakagawa
 [alias]
-	log2 = log --graph --name-status --format='%h %Cgreen%ad %Cblue%an%Creset %s %Cred%d'
+	log2 = log --format='%h %Cgreen%ad %Cblue%an%Creset %s %Cred%d' --graph --stat
 	st = status
