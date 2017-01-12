@@ -4,7 +4,6 @@
 [push]
 	default = simple
 [user]
-	email = t-nakagw@sra.co.jp
 	name = Tomohiro Nakagawa
 [alias]
 	log2 = log --format='%h %Cgreen%ad %Cblue%an%Creset %s %Cred%d' --graph --stat
