@@ -22,9 +22,12 @@ set hlsearch
 
 " PLUGINS
 
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'mhinz/vim-rfc'
-Plug 'vim-scripts/rfc-syntax', {'for': 'rfc'}
-call plug#end()
-
+if exists('*plug#begin')
+  call plug#begin('~/.vim/plugged')
+  Plug 'junegunn/vim-easy-align'
+  Plug 'mhinz/vim-rfc'
+  Plug 'vim-scripts/rfc-syntax', {'for': 'rfc'}
+  call plug#end()
+else
+  " echomsg 'plugin disabled'
+endif
