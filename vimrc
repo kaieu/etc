@@ -18,6 +18,7 @@ set ttymouse=sgr
 
 " MISC
 set hlsearch
+set ambiwidth=double
 
 
 " PLUGINS
